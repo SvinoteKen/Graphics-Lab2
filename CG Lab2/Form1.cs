@@ -103,17 +103,17 @@ namespace CG_Lab2
 
             g.DrawLine(axesPen, WidthInInches / 2, 0, WidthInInches / 2, HeightInInches);
 
-            x = -Convert.ToInt64(Math.PI/2);
+            x = -Convert.ToSingle(Math.PI/2);
             ex = 0;
-            shag = Convert.ToInt64(WidthInInches / 25.4);
+            shag = Convert.ToSingle(WidthInInches / 25.4);
             while (ex <= WidthInInches + shag)
             {
-                y = Convert.ToInt64(2 * Math.Pow(x, 3) + 2 * x);
-                ey = Convert.ToInt64(-y) + HeightInInches / 2;
+                y = Convert.ToSingle(2 * Math.Pow(x, 3) + 2 * x);
+                ey = Convert.ToSingle(-y) + HeightInInches / 2;
                 if (ex != 0) { g.DrawLine(graphicsPen, old_ex, old_ey, ex, ey); }
                 old_ex = ex; old_ey = ey;
                 ex = ex + shag;
-                x = x + Convert.ToInt64(Math.PI + shag);
+                x = x + Convert.ToSingle(Math.PI + shag);
             }
         }
         private void button4_Click(object sender, EventArgs e)
